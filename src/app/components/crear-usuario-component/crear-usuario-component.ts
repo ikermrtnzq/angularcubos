@@ -27,10 +27,9 @@ export class CrearUsuarioComponent {
     let nombre = this.cajanombre.nativeElement.value;
     let email = this.cajaemail.nativeElement.value;
     let pwd = this.cajapwd.nativeElement.value;
-    let id = 0
+    let id = 1000
     let alumno = new Usuario(id,nombre,email,pwd)
     await this._service.crearUsuarioAsync(alumno)
-    console.log("SE HA CREADO")
     this._cdr.detectChanges();
     await this._service.logout();
     let credencial = new Credencial(nombre,pwd)

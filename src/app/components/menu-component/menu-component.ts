@@ -23,6 +23,7 @@ export class MenuComponent implements OnInit {
   ){}
   logout() : void {
     sessionStorage.removeItem("TOKEN");
+    this.usuario.set(null);
     this._router.navigate(["/"])
   }
   buscar() : void{

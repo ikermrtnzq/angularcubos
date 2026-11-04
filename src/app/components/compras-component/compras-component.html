@@ -30,6 +30,9 @@
             <button class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2.5 px-4 rounded-md transition-colors text-center shadow-sm">
                 <a class="no-underline text-white block w-full" [routerLink]="['/comprar']">Realizar pedido</a>
             </button>
+            <button (click)="generarDocumento()" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2.5 px-4 rounded-md transition-colors text-center shadow-sm">
+                generar pdf compras
+            </button>
         </div>
     </div>
 }

@@ -34,21 +34,13 @@ export class ServiceLogin{
         )
     }
 
-    async crearUsuarioAsync(alumno : Usuario): Promise<any>{
+    async crearUsuarioAsync(usuario : Usuario): Promise<any>{
         let endpoint = "api/Manage/RegistroUsuario";
-        let json = JSON.stringify(alumno);
+        let json = JSON.stringify(usuario);
         let header = new HttpHeaders().set("content-type","application/json");
-        try {
-            return await firstValueFrom(
-                this._http.post(this.url + endpoint, json, {headers: header})
-            );
-        } catch (error: any) {
-            if (error.status == 200) {
-                console.log("Alumno creado correctamente");
-                return;
-            }
-            throw error;
-        }
+        await firstValueFrom(
+            this._http.post(this.url + endpoint, json, {headers : header})
+        )
     }
     async crearCompraAync(id : number): Promise<any> {
         let endpoint= "api/Compra/InsertarPedido/" + id;

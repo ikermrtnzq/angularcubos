@@ -1,0 +1,65 @@
+<nav class="bg-gray-100 shadow-md w-full">
+    <div class="w-full flex items-center justify-between px-4 py-3">
+        <a class="flex items-center" href="#"><img style="width: 50px;" alt=""></a>
+        <button class="lg:hidden p-2 border rounded-md border-gray-300" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="hidden lg:flex lg:items-center lg:justify-between w-full" id="navbarSupportedContent">
+            <ul class="flex flex-col lg:flex-row lg:items-center lg:gap-6 mr-auto mb-2 lg:mb-0">
+                <li class="list-none">
+                    <a class="text-gray-700 hover:text-blue-600 px-3 py-2 block" [routerLink]="['/home']">home</a>
+                </li>
+                <li class="list-none">
+                    <a class="text-gray-700 hover:text-blue-600 px-3 py-2 block" [routerLink]="['/']">acceder</a>
+                </li>
+                <li class="list-none">
+                    <a class="text-gray-700 hover:text-blue-600 px-3 py-2 block" [routerLink]="['/crearusuario']">añadir Usuario</a>
+                </li>
+                <!--<li class="nav-item dropdown list-none">
+                    <a class="nav-link dropdown-toggle text-gray-700 hover:text-blue-600 px-3 py-2 block" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Marcas
+                    </a>
+                    <ul class="dropdown-menu">
+                        @for (marca of marcas; track marca) {
+                            <li><a class="dropdown-item" href="#">{{marca}}</a></li>
+                        }                    
+                    </ul>
+                </li>-->
+                <form action="">
+                <select (change)="buscar()" name="selectmarca" #selectmarca id=""
+                    class="w-full sm:w-56 border border-slate-600 rounded-lg px-4 py-2.5 bg-slate-800 text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition cursor-pointer">
+                    @for (marca of marcas; track marca) {
+                        <option value="{{marca}}">{{marca}}</option>
+                    }
+                </select>
+                </form>
+                <form action="">
+                <select (change)="redirigir()" name="selectruta" #selectruta id=""
+                    class="w-full sm:w-56 border border-slate-600 rounded-lg px-4 py-2.5 bg-slate-800 text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition cursor-pointer">
+                        <option value="miperfil">Usuario</option>
+                        <option value="compras">Ver Compras</option>
+                        <option value="comprar">Comprar</option>
+                </select>
+                </form>
+                @if (usuario()!= null) {
+                    <form class="flex items-center" role="search">
+                        <button
+                            class="px-5 py-2.5 bg-slate-800 border border-cyan-500 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-500 hover:text-white transition duration-200 shadow-sm"
+                            type="button">
+                            👤{{ usuario()}}
+                        </button>
+                    </form>
+                }@else {
+                    <form class="flex items-center" role="search">
+                        <button
+                            class="px-5 py-2.5 bg-slate-800 border border-slate-600 text-gray-300 font-semibold rounded-lg hover:bg-slate-700 transition duration-200"
+                            type="button">
+                            No found
+                        </button>
+                    </form>
+                }
+            </ul>
+            <button (click)="logout()" class="border border-red-500 text-red-500 hover:bg-red-500 hover:text-white px-4 py-2 rounded-md transition-colors" type="button">logout</button>
+        </div>
+    </div>
+</nav>

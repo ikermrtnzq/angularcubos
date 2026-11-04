@@ -1,0 +1,17 @@
+<div class="h-full bg-white border border-gray-200 rounded-lg shadow-sm flex flex-col overflow-hidden">
+    <img
+    [src]="cube.imagen"
+    class="w-full object-contain p-4"
+    [alt]="cube.nombre"
+    style="height: 120px;"
+    >
+    <div class="p-4 flex flex-col flex-grow justify-between">
+        <div>
+            <h5 class="font-semibold text-gray-900 text-base mb-1">{{ cube.nombre }}</h5>
+            <p class="text-gray-600 text-sm mb-4">Precio: {{ cube.precio }}</p>
+        </div>
+        <a (click)="mostrarFavorito()" target="_blank" class="inline-block bg-blue-600 hover:bg-blue-700 text-white text-center font-medium py-2 px-4 rounded-md transition-colors cursor-pointer text-sm">
+            Fav
+        </a>
+    </div>
+</div>

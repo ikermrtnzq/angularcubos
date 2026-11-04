@@ -1,0 +1,25 @@
+@if (perfil) {
+        <div class="flex flex-col gap-6 mx-auto w-full max-w-2xl pt-8 px-4">
+            <h1 class="text-3xl font-bold text-gray-800 tracking-tight">TUS COMPRAS</h1>
+            <button class="bg-cyan-500 hover:bg-cyan-600 text-white font-medium border border-cyan-500 rounded-lg m-3 py-2 px-4 shadow-sm transition-colors w-max">
+                <a class="text-decoration-none text-white block" [routerLink]="['/']">volver</a>
+            </button>
+            <div class="overflow-hidden border border-gray-200 rounded-lg shadow-sm">
+                <table class="w-full text-left border-collapse">
+                    <thead class="bg-cyan-100 border-b border-cyan-200 text-gray-700">
+                        <tr> 
+                            <th class="ps-4 py-3 font-semibold text-sm">Nombre</th>
+                            <th class="ps-4 py-3 font-semibold text-sm">email</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200 bg-white">
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="ps-4 py-3 text-gray-800 text-sm">{{perfil.nombre}}</td>
+                            <td class="ps-4 py-3 text-gray-600 text-sm">{{perfil.email}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <button class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg shadow-md transition-colors text-center"><a [routerLink]="['/compras']">Ver mis compras</a></button>
+        </div>
+}

@@ -1,0 +1,17 @@
+<div class="container mx-auto mt-6 px-4">
+    <div class="border border-cyan-500 border-4 mx-auto w-full max-w-lg flex flex-col p-6 rounded-lg shadow-lg bg-white">
+        <div class="mb-4">
+            <button [routerLink]="['/home']" class="bg-cyan-500 hover:bg-cyan-600 text-white font-medium py-1.5 px-4 rounded-md transition-colors text-sm">volver</button>
+        </div>
+        <h1 class="text-center text-blue-600 text-3xl font-medium mb-6">CREATE ALUMNO</h1>
+        <form #formCreate="ngForm" action="" class="flex flex-col gap-3">
+            <label for="" class="block text-sm text-gray-700">Nombre:</label>
+            <input name="cajanombre" #cajanombre type="text" class="w-full border border-gray-300 rounded-md p-2.5 focus:outline-none focus:ring-1 focus:ring-cyan-500 text-sm">  
+            <label for="" class="block text-sm text-gray-700 mt-2">Email:</label>
+            <input name="cajaemail" #cajaemail type="text" class="w-full border border-gray-300 rounded-md p-2.5 focus:outline-none focus:ring-1 focus:ring-cyan-500 text-sm">
+            <label for="" class="block text-sm text-gray-700 mt-2">password:</label>
+            <input name="cajapwd" #cajapwd type="password" class="w-full border border-gray-300 rounded-md p-2.5 focus:outline-none focus:ring-1 focus:ring-cyan-500 text-sm">
+            <button (click)="crear()" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2.5 px-4 rounded-md mt-4 transition-colors flex items-center justify-center w-full text-sm">Create</button>
+        </form>
+    </div>
+</div>

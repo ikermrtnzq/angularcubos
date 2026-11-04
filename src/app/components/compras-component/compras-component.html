@@ -1,0 +1,35 @@
+@if (compras) {
+    <div class="flex flex-col gap-6 mx-auto w-full max-w-4xl pt-8 px-4">
+        <h1 class="text-3xl font-bold text-gray-800 tracking-tight">Tus Compras</h1>
+        
+        <div class="overflow-hidden border border-gray-200 rounded-lg shadow-sm">
+            <table class="w-full text-left border-collapse">
+                <thead class="bg-blue-100 border-b border-blue-200 text-gray-800">
+                    <tr class=""> 
+                        <th class="px-4 py-3 font-semibold text-sm"># Pedido</th>
+                        <th class="px-4 py-3 font-semibold text-sm">ID Cubo</th>
+                        <th class="px-4 py-3 font-semibold text-sm">Fecha del Pedido</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200 bg-white">
+                    @for (compra of compras; track compra) {
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="px-4 py-3 text-gray-800 text-sm">{{compra.idPedido}}</td>
+                            <td class="px-4 py-3 text-gray-800 text-sm">{{compra.idCubo}}</td>
+                            <td class="px-4 py-3 text-gray-600 text-sm">{{compra.fechaPedido}}</td> 
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-4">
+            <button class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2.5 px-4 rounded-md transition-colors text-center shadow-sm">
+                <a class="no-underline text-white block w-full" [routerLink]="['/miperfil/']">Volver al perfil</a>
+            </button>
+            <button class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2.5 px-4 rounded-md transition-colors text-center shadow-sm">
+                <a class="no-underline text-white block w-full" [routerLink]="['/comprar']">Realizar pedido</a>
+            </button>
+        </div>
+    </div>
+}

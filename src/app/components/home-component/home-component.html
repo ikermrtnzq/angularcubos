@@ -1,0 +1,8 @@
+<h2 class="text-3xl font-extrabold text-gray-800 text-center my-6 tracking-tight">{{this.mensaje}}</h2><div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-4">
+    @for (cubo of cubos; track cubo) {
+        <app-cubo-component 
+            (seleccionarFavorito)="seleccionarFavorito($event)"
+        [cube]="cubo">
+        </app-cubo-component>
+    }
+</div>
